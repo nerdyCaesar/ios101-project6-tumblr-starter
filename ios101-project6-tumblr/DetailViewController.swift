@@ -23,8 +23,20 @@ class DetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.title = "Post Details" // or whatever you want
-        navigationController?.navigationBar.prefersLargeTitles = true
+        self.title = "Post Details"
+            
+            if let post = post {
+                textView.text = post.caption.trimHTMLTags()
+
+                // Load image using Nuke
+                if let urlString = post.photos.first?.originalSize.url
+                {
+                    Nuke.loadImage(with: urlString, into: imageView)
+                }
+                
+            } else {
+                print("⚠️ post is nil")
+            }
 
         
         guard let post = post else {
