@@ -1,8 +1,8 @@
-# Project 6 - *Tublr*
+# Project 6 - *Tumblr*
 
 Submitted by: **Piyush Belbase**
 
-**Tublr** is an app that shows blog posts like a feed and also can go into detail of that post
+**Tumblr** is an app that shows blog posts like a feed and also can go into detail of that post
 
 Time spent: **3** hours spent in total
 
