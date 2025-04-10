@@ -78,4 +78,23 @@ class ViewController: UIViewController, UITableViewDataSource {
         }
         session.resume()
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "ShowDetail",
+           let detailVC = segue.destination as? DetailViewController,
+           let indexPath = tableView.indexPathForSelectedRow {
+            
+            let selectedPost = posts[indexPath.row]
+            detailVC.post = selectedPost
+        }
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        if let indexPath = tableView.indexPathForSelectedRow {
+            tableView.deselectRow(at: indexPath, animated: true)
+        }
+    }
+
 }
